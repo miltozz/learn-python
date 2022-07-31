@@ -12,3 +12,13 @@ print(list1[0])
 list1.append("ham")
 
 print(list1)
+
+
+# iterate the third item of the list
+list1 = ['one','two','three']
+for item in list1[2]:
+    print(item)
+
+# skip first two items and start iteration from index 2
+for item in list1[2:]:
+    print(item)

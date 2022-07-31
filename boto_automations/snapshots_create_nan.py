@@ -27,10 +27,15 @@ def create_p_s_snapshots():
         )
         print(snapshot)
 
-#uncomment to schedule
-#schedule.every().day.at("02:00").do(create_p_s_snapshots)
+
+#create_p_s_snapshots()
+''' SCHEDULING
+
+#schedule rule
+schedule.every().day.at("02:00").do(create_p_s_snapshots)
 
 # run scheduled jobs
 while True:  # forever
     schedule.run_pending()
     time.sleep(1)
+'''

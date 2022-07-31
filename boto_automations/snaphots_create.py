@@ -18,14 +18,12 @@ instances = ec2_client.describe_instances(
             ]
         },
     ],
-) # returns dict
+)  # returns dict
 reservations = (instances["Reservations"])  # returns reservations list
 for reservation in reservations:  # reservation is dict
     instances = reservation["Instances"]  # instances is list
     for instance in instances:  # instance is dict
         prod_instance_ids.append(instance['InstanceId'])
-
-
 
 
 # describe_volumes, filter by instance id using the list prod_instance_ids
@@ -61,14 +59,9 @@ for volume in volumes:
                         {
                             'Key': 'Date created',
                             'Value': string_now
-                        },                    
+                        },
                     ]
                 },
             ],
             DryRun=False
         )
-
-
-
-
-
