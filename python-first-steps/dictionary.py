@@ -23,5 +23,6 @@ for i in dict1.items():
 # pop pair by key
 dict1.pop("ham")
 
-for i in dict1.items():
-    print(i)
+#prints keys
+for dict_item in dict1:
+    print(dict_item)
