@@ -96,7 +96,7 @@ while True:
     print(vol.state)
     if vol.state == 'available':
         ec2_resource.Instance(instance_id).attach_volume(
-            Device='/dev/xvdb',
+            Device='/dev/xvda',
             VolumeId=new_volume['VolumeId']
         )
         print('\nVolume attached!')

@@ -1,0 +1,3 @@
+{
+    "python.envFile": "${workspaceFolder}/.env" //semi-broken. works in debug mode
+}
