@@ -1,6 +1,8 @@
 from fabric import Connection
 from invoke import Responder
 
+# fabric creates a copy of known_hosts and automatically adds new hosts to it.
+# it doesn't change the original ./ssh/known_hosts
 # set host 'ec2-monitor' in .ssh/config to be read automatically
 # else must specify connection details here
 result = Connection('ec2-monitor').run('docker ps', hide=True)
@@ -8,11 +10,11 @@ msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
 print(msg.format(result))
 
 
-# other syntax
+""" # other syntax
 c = Connection('ec2-monitor')
 r = c.run('sudo whoami', hide=True)
 msg = "Ran {0.command!r} on {0.connection.host}, got stdout:\n{0.stdout}"
-print(msg.format(result))
+print(msg.format(result)) """
 
 
 # sudo password prompt
