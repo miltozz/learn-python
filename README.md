@@ -1,3 +1,3 @@
 # learn-python
 
-Basically a backup of my Python learning exercises. 
+A backup of my Python learning exercises. 
