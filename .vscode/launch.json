@@ -1,18 +1,32 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "env":{"BACON":"SOGOOD"} //not working in vscode 08/2022
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {// Works in Debug. Choose configuration before running
+    // Uses dev.env
+    // BACON value overrides dev.env BACON value
+      "name": "Python: DEV Current File ",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/dev.env",
+      "justMyCode": true,
+      "env": { "BACON": "DEV_LAUNCH_CONF_ENV_VAR" } 
+    },
+    {// If we don't specify the prod.env file it defaults to {workspace}.env 
+    // (see User or Workspace settings)
+      "name": "Python: PROD Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      //"envFile": "${workspaceFolder}/prod.env",//not specified so it defaults to {workspace}.env
+      "justMyCode": true,
+      "env": { "BACON": "PROD_LAUNCH_CONF_ENV_VAR" } //precedes-overrides .env BACON value
+    }
+  ]
 }
