@@ -8,6 +8,7 @@ l_vpcs = (d_response["Vpcs"])  # list
 
 for d_vpc in l_vpcs:
     print(d_vpc["VpcId"])
+    print(d_vpc["IsDefault"])
     l_cidrBlockAssociationSet = d_vpc["CidrBlockAssociationSet"]
 
     for d_a_set in l_cidrBlockAssociationSet:

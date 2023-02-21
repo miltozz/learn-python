@@ -12,9 +12,12 @@ print(type(res.json()))
 print( "\n")
 
 print(res.json())
+print("------------res.json")
 
 res_dict = res.json()
 print(res_dict.get("login") + "\n" + res_dict.get("url"))
+
+print("------------res.json().get(login")
 
 #for i in res.json():
 #    print(f"Project name: {i['name']}. Project url: {i['web_url']}\n")
